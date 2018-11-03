@@ -1,5 +1,7 @@
 package com.epam.training;
 
+import java.util.Objects;
+
 public final class Pancake {
 
     private static final double MIN_DIFF = 0.1;
@@ -41,5 +43,9 @@ public final class Pancake {
         return true;
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, Math.round(this.diameter / MIN_DIFF));
+    }
 }
 
